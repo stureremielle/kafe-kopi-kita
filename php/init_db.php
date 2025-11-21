@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 
-// SQL to create table
+// SQL to create reservations table
 $sql = "CREATE TABLE IF NOT EXISTS reservations (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -15,9 +15,24 @@ $sql = "CREATE TABLE IF NOT EXISTS reservations (
 )";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Table reservations created successfully";
+    echo "Table reservations created successfully<br>";
 } else {
-    echo "Error creating table: " . $conn->error;
+    echo "Error creating table: " . $conn->error . "<br>";
+}
+
+// SQL to create contacts table
+$sql_contacts = "CREATE TABLE IF NOT EXISTS contacts (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)";
+
+if ($conn->query($sql_contacts) === TRUE) {
+    echo "Table contacts created successfully";
+} else {
+    echo "Error creating contacts table: " . $conn->error;
 }
 
 $conn->close();
