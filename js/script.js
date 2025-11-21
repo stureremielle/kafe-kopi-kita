@@ -129,6 +129,39 @@ document.addEventListener("DOMContentLoaded", function () {
     return guestMap[guestValue] || guestValue;
   }
 
+  // === Contact Form Handling ===
+  if (window.location.pathname.endsWith("contact.html")) {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData();
+        formData.append('name', document.querySelector('input[name="name"]').value);
+        formData.append('email', document.querySelector('input[name="email"]').value);
+        formData.append('message', document.querySelector('textarea[name="message"]').value);
+        
+        fetch('php/contact.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
+          } else {
+            alert('Error: ' + data.message);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred while sending your message.');
+        });
+      });
+    }
+  }
+
   // === Scroll Animations ===
   function handleScrollAnimations() {
     const elements = document.querySelectorAll('.feature-card, .menu-card, .reservation-item, .promotion-card');
@@ -150,6 +183,50 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener('DOMContentLoaded', function() {
     setTimeout(handleScrollAnimations, 100); // Small delay to ensure elements are loaded
   });
+
+  // === Overscroll Bounce Effect ===
+  let startY = 0;
+  let currentY = 0;
+  let isScrolling = false;
+
+  document.addEventListener('touchstart', function(e) {
+    startY = e.touches[0].pageY;
+  }, { passive: true });
+
+  document.addEventListener('touchmove', function(e) {
+    if (window.scrollY === 0) {
+      currentY = e.touches[0].pageY;
+      const deltaY = currentY - startY;
+      
+      if (deltaY > 0) {
+        e.preventDefault();
+        document.body.style.transform = `translateY(${deltaY * 0.5}px)`;
+        document.body.style.transition = 'none';
+        document.body.classList.add('bounce-overscroll');
+        isScrolling = true;
+      }
+    } else if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+      // User is at bottom of page
+      currentY = e.touches[0].pageY;
+      const deltaY = currentY - startY;
+      
+      if (deltaY < 0) {
+        e.preventDefault();
+        document.body.style.transform = `translateY(${deltaY * 0.5}px)`;
+        document.body.style.transition = 'none';
+        document.body.classList.add('bounce-overscroll');
+        isScrolling = true;
+      }
+    }
+  }, { passive: false });
+
+  document.addEventListener('touchend', function() {
+    if (isScrolling) {
+      document.body.style.transform = '';
+      document.body.classList.remove('bounce-overscroll');
+      isScrolling = false;
+    }
+  }, { passive: true });
 
 
 });
