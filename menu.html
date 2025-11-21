@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Menu — Kafe Kopi Kita</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="index.html">Kafe Kopi Kita</a>
+                </div>
+                <nav class="nav-menu">
+                    <a href="menu.html">Menu</a>
+                    <a href="reservasi.html">Reservasi</a>
+                    <a href="testimoni.html">Testimoni</a>
+                    <a href="kontak.html">Kontak</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <section class="menu-section">
+                <h1>Daftar Menu</h1>
+
+                <!-- Filter Buttons -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        Semua
+                    </button>
+                    <button class="filter-btn" data-filter="kopi">Kopi</button>
+                    <button class="filter-btn" data-filter="non-kopi">
+                        Non-Kopi
+                    </button>
+                    <button class="filter-btn" data-filter="snack">
+                        Snack
+                    </button>
+                </div>
+
+                <!-- Menu Grid -->
+                <div class="menu-grid">
+                    <!-- Kopi -->
+                    <div
+                        class="menu-card kopi"
+                        data-category="kopi"
+                        style="
+                            background-image: url(&quot;menu-image/espresso.jpg&quot;);
+                        "
+                    >
+                        <div class="menu-overlay"></div>
+                        <div class="menu-text">
+                            <h3>Espresso</h3>
+                            <p>Kopi hitam pekat, ekstraksi sempurna.</p>
+                            <span class="price">Rp 15.000</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="menu-card kopi"
+                        data-category="kopi"
+                        style="
+                            background-image: url(&quot;menu-image/cappucino.jpg&quot;);
+                        "
+                    >
+                        <div class="menu-overlay"></div>
+                        <div class="menu-text">
+                            <h3>Cappuccino</h3>
+                            <p>Espresso, susu uap, dan busa halus.</p>
+                            <span class="price">Rp 20.000</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="menu-card kopi"
+                        data-category="kopi"
+                        style="
+                            background-image: url(&quot;menu-image/cappucino.jpeg&quot;);
+                        "
+                    >
+                        <div class="menu-overlay"></div>
+                        <div class="menu-text">
+                            <h3>V60 Ethiopia</h3>
+                            <p>Kopi tubruk filter, floral & citrusy.</p>
+                            <span class="price">Rp 25.000</span>
+                        </div>
+                    </div>
+
+                    <!-- Non-Kopi -->
+                    <div
+                        class="menu-card non-kopi"
+                        data-category="non-kopi"
+                        style="
+                            background-image: url(&quot;menu-image/cappucino.jpeg&quot;);
+                        "
+                    >
+                        <div class="menu-overlay"></div>
+                        <div class="menu-text">
+                            <h3>Matcha Latte</h3>
+                            <p>Matcha premium dengan susu segar.</p>
+                            <span class="price">Rp 22.000</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="menu-card non-kopi"
+                        data-category="non-kopi"
+                        style="
+                            background-image: url(&quot;menu-image/cappucino.jpeg&quot;);
+                        "
+                    >
+                        <div class="menu-overlay"></div>
+                        <div class="menu-text">
+                            <h3>Choco Melt</h3>
+                            <p>Coklat panas kental dengan marshmallow.</p>
+                            <span class="price">Rp 18.000</span>
+                        </div>
+                    </div>
+
+                    <!-- Snack -->
+                    <div
+                        class="menu-card snack"
+                        data-category="snack"
+                        style="
+                            background-image: url(&quot;menu-image/cappucino.jpeg&quot;);
+                        "
+                    >
+                        <div class="menu-overlay"></div>
+                        <div class="menu-text">
+                            <h3>Roti Bakar Keju</h3>
+                            <p>Roti gandum, keju cheddar, dan susu kental.</p>
+                            <span class="price">Rp 16.000</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="menu-card snack"
+                        data-category="snack"
+                        style="
+                            background-image: url(&quot;menu-image/cappucino.jpeg&quot;);
+                        "
+                    >
+                        <div class="menu-overlay"></div>
+                        <div class="menu-text">
+                            <h3>Donat Gula Halus</h3>
+                            <p>Donat empuk, taburan gula halus.</p>
+                            <span class="price">Rp 12.000</span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="menu-card snack"
+                        data-category="snack"
+                        style="
+                            background-image: url(&quot;menu-image/cappucino.jpeg&quot;);
+                        "
+                    >
+                        <div class="menu-overlay"></div>
+                        <div class="menu-text">
+                            <h3>Croissant Almond</h3>
+                            <p>Croissant isi almond dan selai aprikot.</p>
+                            <span class="price">Rp 18.000</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Kafe Kopi Kita. Semua Hak Dilindungi.</p>
+        </footer>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>

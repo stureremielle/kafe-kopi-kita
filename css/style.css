@@ -1,0 +1,416 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "ogg";
+    src: url("../fonts/ogg/oggtext-light.otf") format("opentype");
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "dagine";
+    src: url("../fonts/dagine/DagineRegular.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: "Poppins", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ece5df;
+    padding-top: 70px; /* sesuaikan dengan tinggi header */
+}
+
+/* Main Header */
+.main-header {
+    background-color: #b96423;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo a {
+    color: #ece5df;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-menu a {
+    color: #ece5df;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background-image: url("../image/cafe2.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    text-align: center;
+    color: #ece5df;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 6rem;
+    font-family: "dagine";
+    margin-bottom: 16px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 28px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+/* Tombol Hero */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn.primary {
+    background-color: transparent;
+    color: #ece5df;
+    border: 2px solid #ece5df;
+}
+
+.btn.primary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.btn.outline {
+    background-color: transparent;
+    color: #ece5df;
+    border: 2px solid #ece5df;
+}
+
+.btn.outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Konten Utama */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px 40px;
+}
+
+.about h2 {
+    font-size: 2.2rem;
+    color: #5d4037;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.about p {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+.features h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #8d6e63;
+    margin: 50px 0 30px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.feature-card {
+    background-color: transparent;
+    border: 1px solid #333;
+    padding: 28px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h4 {
+    color: #6b402a;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+/* Footer */
+footer {
+    background-color: #b96423;
+    color: #ece5df;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    .header-container {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 12px 20px;
+    }
+
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 16px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* === Menu Page Styles === */
+.menu-section {
+    padding: 40px 0;
+}
+
+.menu-section h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #5d4037;
+    margin-bottom: 32px;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+.filter-btn {
+    background-color: #ece5df;
+    color: #b96423;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #b96423;
+    color: #ece5df;
+}
+
+/* === MENU SECTION - FULL RESET & STABIL === */
+.menu-section {
+    padding: 40px 0;
+}
+
+.menu-section h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #5d4037;
+    margin-bottom: 32px;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+.filter-btn {
+    background-color: #ece5df;
+    color: #b96423;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #b96423;
+    color: #ece5df;
+}
+
+/* Menu Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* Menu Card - Stabil & Responsive */
+.menu-card {
+    height: 320px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.2s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Overlay Gradient (putih transparan dari bawah) */
+.menu-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.95),
+        rgba(255, 255, 255, 0)
+    );
+    pointer-events: none;
+}
+
+/* Teks di Atas Overlay */
+.menu-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px;
+    color: #ece5df; /* fallback */
+    font-family: "Poppins", sans-serif;
+}
+
+.menu-text h3 {
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #ece5df; /* coklat oranye — nama menu */
+    text-shadow: 2px 2px 8px #000000;
+}
+
+.menu-text p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: #ece5df; /* abu-abu gelap — deskripsi */
+    text-shadow: 2px 2px 8px #000000;
+}
+
+.menu-text .price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #ece5df; /* coklat tua — harga */
+    display: block;
+}

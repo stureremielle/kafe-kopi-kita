@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Dagine';
+    src: url('DagineRegular.eot');
+    src: local('Dagine'), local('DagineRegular'),
+        url('DagineRegular.eot?#iefix') format('embedded-opentype'),
+        url('DagineRegular.woff2') format('woff2'),
+        url('DagineRegular.woff') format('woff'),
+        url('DagineRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
