@@ -477,3 +477,119 @@ footer {
     color: #8B4513;
     margin-top: 0;
 }
+
+/* Reservation page styles */
+.reservation-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reservation-section h2 {
+    text-align: center;
+    color: #5d4037;
+    margin-bottom: 10px;
+}
+
+.reservation-section p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.reservation-form {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #5d4037;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #b96423;
+    box-shadow: 0 0 0 2px rgba(185, 100, 35, 0.2);
+}
+
+.reservation-list h3 {
+    color: #5d4037;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.reservation-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 4px solid #b96423;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.reservation-item h4 {
+    margin: 0 0 8px 0;
+    color: #5d4037;
+}
+
+.reservation-item p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Animation classes */
+.bounce-in {
+    animation: bounceIn 0.6s ease forwards;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
