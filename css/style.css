@@ -593,3 +593,8 @@ footer {
         transform: translateY(0);
     }
 }
+
+/* Overscroll bounce effect */
+body.bounce-overscroll {
+    transition: transform 0.3s ease;
+}
