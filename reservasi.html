@@ -27,8 +27,65 @@
         </header>
 
         <main class="container">
-            <h2>Reservasi Meja</h2>
-            <p>Formulir reservasi meja akan segera tersedia. Silakan hubungi kami langsung untuk informasi lebih lanjut.</p>
+            <section class="reservation-section">
+                <h2>Reservasi Meja</h2>
+                <p>Silakan isi formulir di bawah ini untuk memesan meja di Kafe Kopi Kita.</p>
+                
+                <form id="reservationForm" class="reservation-form">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Nomor Telepon</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Tanggal</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time">Waktu</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guests">Jumlah Tamu</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Pilih jumlah tamu</option>
+                            <option value="1">1 Orang</option>
+                            <option value="2">2 Orang</option>
+                            <option value="3">3 Orang</option>
+                            <option value="4">4 Orang</option>
+                            <option value="5-10">5-10 Orang</option>
+                            <option value="10+">Lebih dari 10 Orang</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="specialRequest">Permintaan Khusus (Opsional)</label>
+                        <textarea id="specialRequest" name="specialRequest" rows="4" placeholder="Tempat duduk favorit, kebutuhan khusus, dll."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn primary">Pesan Sekarang</button>
+                </form>
+                
+                <!-- Reservation List Section -->
+                <div class="reservation-list">
+                    <h3>Daftar Reservasi Terbaru</h3>
+                    <div id="reservationListContainer">
+                        <!-- Reservation list will be populated here by JavaScript -->
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer>
