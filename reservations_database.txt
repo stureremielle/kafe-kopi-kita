@@ -1,0 +1,26 @@
+# Reservations Database Schema
+
+## Table: reservations
+- id (INTEGER PRIMARY KEY AUTOINCREMENT)
+- name (TEXT NOT NULL)
+- email (TEXT NOT NULL)
+- phone (TEXT NOT NULL)
+- date (TEXT NOT NULL)
+- time (TEXT NOT NULL)
+- guests (TEXT NOT NULL)
+- special_request (TEXT)
+- timestamp (TEXT NOT NULL)
+
+## Description:
+This database stores customer reservation information for the coffee shop. The current implementation uses localStorage in the browser to simulate the database functionality. In a production environment, this would be replaced with a proper backend database (MySQL, PostgreSQL, etc.).
+
+## Fields:
+- id: Unique identifier for each reservation
+- name: Customer's full name
+- email: Customer's email address
+- phone: Customer's phone number
+- date: Reservation date (YYYY-MM-DD format)
+- time: Reservation time (HH:MM format)
+- guests: Number of guests (value from dropdown options)
+- special_request: Any special requests from the customer
+- timestamp: When the reservation was created (ISO format)
